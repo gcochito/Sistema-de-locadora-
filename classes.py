@@ -1,0 +1,112 @@
+class Item():
+    def __init__(self,codigo, titulo, disponivel):
+        self.__codigo= codigo
+        self.__titulo = titulo
+        self.__disponivel = True
+
+    def getCodigo(self):
+        return self.__codigo
+
+    def getTitulo(self):
+        return self.__titulo
+
+    def getDisponivel(self):
+        return self.__disponivel
+
+    def setTitulo(self, titulo):
+        self.__titulo = titulo
+        return self.__titulo
+
+    def setDisponivel(self, disponivel):
+        self.__disponivel = disponivel
+        return self.__disponivel
+    
+    
+
+
+
+class Filme (Item):
+    def __init__(self, genero, duracao):
+        self.__genero = genero 
+        self.__duracao = duracao
+        
+        def getGenero(self):
+            return self.__genero 
+        
+        def getDuracao(self):
+            return self.__duracao 
+        
+
+class Jogo (Item):
+    def __init__(self, plataforma, faixaEtaria):
+        self.__plataforma = plataforma
+        self.__faixaEtaria = faixaEtaria
+
+        def getPlataforma(self):
+            return self.__plataforma
+        
+        def getfaixaEtaria(self):
+            return self.__faixaEtaria
+       
+
+
+
+class Cliente():
+    def __init(self, nome, cpf, itensLocados):
+        self.__nome=nome 
+        self.__cpf=cpf
+        self.__itensLocados=[]
+
+    def getNome(self):
+        return self.__nome
+
+    def getCpf(self):
+        return self.__cpf
+
+    def getitensLocados(self):
+        return self.__itensLocados
+
+    def setNome(self, nome):
+        self.__nome = nome
+        return self.__nome
+
+    def setCpf(self, cpf):
+        self.__cpf = cpf
+        return self.__cpf
+
+    def aluga (self, id, disponivel):
+        self.__disponivel[id].setDisponivel(disponivel) == False 
+        
+    def devolver (self, id, disponivel):
+        self.__disponivel[id].setDisponivel(disponivel) == True
+
+
+    def listarItens (self):
+        return self.__itensLocados
+
+
+class Locadora():
+    def __init(self):
+        self.__clientes={}
+        self.__itens={}
+
+    def cadastrarCliente (self, Cliente, nome, cpf):
+        self.__clientes[len (self.__clientes) + 1] = Cliente (nome=nome, cpf=cpf)
+
+    def cadastrarItem (self, codigo, titulo, disponivel):
+        self.__itens[len(self.__itens)+ 1]= Item (codigo=codigo, titulo=titulo, disponivel=disponivel)
+
+    
+    def listarClientes(self):
+        return self.__itens
+
+
+    def listarItens (self):
+        return self.__clientes
+    
+    def getNome (self):
+        return self.__clientes
+    
+    def getItens (self):
+        return self.__itens
+
