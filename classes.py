@@ -90,7 +90,7 @@ class Locadora():
         self.__clientes={}
         self.__itens={}
 
-    def cadastrarCliente (self, Cliente, nome, cpf):
+    def cadastrarCliente (self, nome, cpf):
         self.__clientes[len (self.__clientes) + 1] = Cliente (nome=nome, cpf=cpf)
 
     def cadastrarItem (self, codigo, titulo, disponivel):

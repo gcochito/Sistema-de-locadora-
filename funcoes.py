@@ -13,7 +13,7 @@ def cadastro():
             case 1:
                 nome = input("Informe seu nome:")
                 cpf = ("Informe seu CPF:")
-                locaSenai.cadastrarCliente(Cliente, nome=nome, cpf=cpf)
+                locaSenai.cadastrarCliente[Cliente(nome=nome, cpf=cpf)]
                 print("Cliente Adicionado ")
             case 2:
                 codigo = input("Informe o código: ")
