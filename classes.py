@@ -21,6 +21,12 @@ class Item():
         self.__disponivel = disponivel
         return self.__disponivel
     
+    def alugar (self, codigo, disponivel):
+        self.__disponivel[codigo]=False
+
+    def devolver(self, codigo, disponivel):
+        self.__disponivel[codigo]= True
+    
     
 
 
@@ -52,10 +58,10 @@ class Jogo (Item):
 
 
 class Cliente():
-    def __init(self, nome, cpf, itensLocados):
+    def __init__(self, nome, cpf):
         self.__nome=nome 
         self.__cpf=cpf
-        self.__itensLocados=[]
+        self.__itensLocados = []
 
     def getNome(self):
         return self.__nome
@@ -74,27 +80,27 @@ class Cliente():
         self.__cpf = cpf
         return self.__cpf
 
-    def aluga (self, id, disponivel):
-        self.__disponivel[id].setDisponivel(disponivel) == False 
-        
-    def devolver (self, id, disponivel):
-        self.__disponivel[id].setDisponivel(disponivel) == True
-
+    def locar(self, item):
+        Item.alugar()
+        self.__itensLocados.append(item)
+    
+    def devolver(self, item):
+        Item.devolver()
 
     def listarItens (self):
         return self.__itensLocados
 
 
 class Locadora():
-    def __init(self):
-        self.__clientes={}
-        self.__itens={}
+    def __init__(self):
+        self.__clientes=[]
+        self.__itens=[]
 
-    def cadastrarCliente (self, nome, cpf):
-        self.__clientes[len (self.__clientes) + 1] = Cliente (nome=nome, cpf=cpf)
+    def cadastrarCliente (self, cliente):
+        self.__clientes.append(cliente)
 
-    def cadastrarItem (self, codigo, titulo, disponivel):
-        self.__itens[len(self.__itens)+ 1]= Item (codigo=codigo, titulo=titulo, disponivel=disponivel)
+    def cadastrarItem (self, item):
+        self.__itens.append(item)
 
     
     def listarClientes(self):

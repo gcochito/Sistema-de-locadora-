@@ -7,8 +7,9 @@ while True:
     print("Bem vindo ao sistema de locação")
     print("Selecione um opção")
     print("1. Cadastro ")
-    print("2 ")
-    print("3. ")
+    print("2. Listar ")
+    print("3. Alugar ")
+    print("4. Devolver")
     print("0. Sair")
     escolha= int(input("->"))
 
@@ -19,10 +20,10 @@ while True:
             listar ()
 
         case 3:
-            pass
+            alugar()
 
         case 4:
-            pass
+            devolver()
 
         case 0:
             print("Saindo...")
