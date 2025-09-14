@@ -1,5 +1,5 @@
 class Item():
-    def __init__(self,codigo, titulo, disponivel):
+    def __init__(self,codigo, titulo):
         self.__codigo= codigo
         self.__titulo = titulo
         self.__disponivel = True

@@ -20,7 +20,7 @@ def cadastro():
             case 2:
                 codigo = input("Informe o código: ")
                 titulo = input("Informe o titulo:")
-                item= Item(codigo,titulo, disponivel)
+                item= Item(codigo,titulo)
                 locaSenai.cadastrarItem(item)
                 print("Item adicionado")
                 os.system("pause")
