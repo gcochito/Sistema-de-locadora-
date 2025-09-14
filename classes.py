@@ -21,16 +21,14 @@ class Item():
         self.__disponivel = disponivel
         return self.__disponivel
     
-    def alugar (self, codigo, disponivel):
-        self.__disponivel[codigo]=False
+    def alugar(self):
+        self.__disponivel = False
 
-    def devolver(self, codigo, disponivel):
-        self.__disponivel[codigo]= True
+    
+    def devolver(self):
+        self.__disponivel = True
     
     
-
-
-
 class Filme (Item):
     def __init__(self, genero, duracao):
         self.__genero = genero 
@@ -69,7 +67,7 @@ class Cliente():
     def getCpf(self):
         return self.__cpf
 
-    def getitensLocados(self):
+    def getItensLocados(self):
         return self.__itensLocados
 
     def setNome(self, nome):
@@ -81,11 +79,12 @@ class Cliente():
         return self.__cpf
 
     def locar(self, item):
-        Item.alugar()
+        item.alugar()
         self.__itensLocados.append(item)
     
     def devolver(self, item):
-        Item.devolver()
+        item.devolver()
+        self.__itensLocados.remove(item)
 
     def listarItens (self):
         return self.__itensLocados
@@ -104,15 +103,15 @@ class Locadora():
 
     
     def listarClientes(self):
-        return self.__itens
+        return self.__clientes
 
 
     def listarItens (self):
-        return self.__clientes
+        return self.__itens
     
-    def getNome (self):
+    def getClientes(self):
         return self.__clientes
-    
-    def getItens (self):
+
+    def getItens(self):
         return self.__itens
 
