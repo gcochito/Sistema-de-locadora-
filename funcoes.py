@@ -19,9 +19,19 @@ def cadastro():
                     print("Cliente Adicionado ")
                     os.system("pause")
                 case 2:
+                    tipo= int(input("Informe o tipo de item: \n1. Filme \n2. Jogo \n-> "))
                     codigo = input("Informe o código: ")
                     titulo = input("Informe o titulo:")
-                    item= Item(codigo,titulo)
+                    match tipo:
+                        case 1:
+                            genero = input("Informe o gênero: ")
+                            duracao = input("Informe a duração (em minutos): ")
+                            item = Filme(codigo, titulo, genero, duracao)
+                            print("Filme adicionado")
+                        case 2:
+                            plataforma = input("Informe a plataforma: ")
+                            item = Jogo(codigo, titulo, plataforma)
+                            print("Jogo adicionado")
                     locaSenai.cadastrarItem(item)
                     print("Item adicionado")
                     os.system("pause")
