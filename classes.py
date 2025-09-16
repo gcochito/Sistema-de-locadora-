@@ -30,7 +30,8 @@ class Item():
     
     
 class Filme (Item):
-    def __init__(self, genero, duracao):
+    def __init__(self, codigo, titulo, genero, duracao):
+        super().__init__(codigo, titulo)
         self.__genero = genero 
         self.__duracao = duracao
         
@@ -42,7 +43,8 @@ class Filme (Item):
         
 
 class Jogo (Item):
-    def __init__(self, plataforma, faixaEtaria):
+    def __init__(self, codigo, titulo, plataforma, faixaEtaria):
+        super().__init__(codigo, titulo)
         self.__plataforma = plataforma
         self.__faixaEtaria = faixaEtaria
 

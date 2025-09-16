@@ -30,7 +30,8 @@ def cadastro():
                             print("Filme adicionado")
                         case 2:
                             plataforma = input("Informe a plataforma: ")
-                            item = Jogo(codigo, titulo, plataforma)
+                            faixaEtaria=int(input("Informe a Faixa Etaria:"))
+                            item = Jogo(codigo, titulo, plataforma, faixaEtaria)
                             print("Jogo adicionado")
                     locaSenai.cadastrarItem(item)
                     print("Item adicionado")
